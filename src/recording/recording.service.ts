@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Recording } from './recording.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -22,5 +22,17 @@ export class RecordingService {
     });
 
     return this.recordingsRepository.save(recording);
+  }
+
+  async findByPublicId(publicId: string): Promise<Recording> {
+    const recording = await this.recordingsRepository.findOne({
+      where: { publicId },
+    });
+
+    if (!recording) {
+      throw new NotFoundException(`Recording with ID ${publicId} not found`);
+    }
+
+    return recording;
   }
 }
