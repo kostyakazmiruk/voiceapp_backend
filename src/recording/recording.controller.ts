@@ -136,14 +136,9 @@ export class RecordingController {
   @Post(':id')
   async update(
     @Param('id') id: string,
-    @Body()
-    updateData: {
-      name?: string;
-      description?: string;
-    },
+    @Body() updateData: { name?: string; description?: string },
   ) {
     const recording = await this.recordingsService.findByPublicId(id);
-
     if (!recording) {
       throw new NotFoundException(`Recording with ID ${id} not found`);
     }

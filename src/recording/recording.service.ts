@@ -53,10 +53,10 @@ export class RecordingService {
     const recording = await this.findByPublicId(publicId);
 
     // Update properties
-    Object.assign(recording, data);
+    const obj = Object.assign(recording, data);
 
     // Save the updated recording
-    return this.recordingsRepository.save(recording);
+    return this.recordingsRepository.save(obj);
   }
 
   async remove(publicId: string): Promise<void> {
