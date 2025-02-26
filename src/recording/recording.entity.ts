@@ -3,6 +3,7 @@ import {
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  Generated,
 } from 'typeorm';
 
 @Entity()
@@ -10,13 +11,14 @@ export class Recording {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ unique: true })
+  @Column({ nullable: true, type: 'text' })
+  @Generated('uuid')
   publicId: string;
 
   @Column()
   name: string;
 
-  @Column({ nullable: true, type: 'text' })
+  @Column()
   description: string;
 
   @Column()

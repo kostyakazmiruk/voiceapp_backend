@@ -49,25 +49,21 @@ export class RecordingController {
     if (!file) {
       throw new BadRequestException('No file uploaded');
     }
-    if (!body.publicId) {
-      throw new BadRequestException('publicId is required');
-    }
-
-    // Construct new filename
-    const newFileName = `${body.publicId}.webm`;
-    const newFilePath = join(uploadDir, newFileName);
-
-    // Rename file using `fs.renameSync`
-    renameSync(file.path, newFilePath);
 
     // Save recording details in database
     const recording = await this.recordingsService.create({
       name: body.name,
       description: body.description,
       duration: parseInt(body.duration, 10),
-      filePath: newFilePath, // Store the correct file path
-      publicId: body.publicId,
+      filePath: ' ', // temp blank, we crete uuid in db
     });
+
+    // Construct new filename
+    const newFileName = `${recording.publicId}.webm`;
+    const newFilePath = join(uploadDir, newFileName);
+
+    // Rename file using `fs.renameSync`
+    renameSync(file.path, newFilePath);
 
     return {
       id: recording.publicId,

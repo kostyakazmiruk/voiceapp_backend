@@ -15,7 +15,6 @@ export class RecordingService {
     description?: string;
     duration: number;
     filePath: string;
-    publicId: string;
   }): Promise<Recording> {
     const recording = this.recordingsRepository.create({
       ...data,
