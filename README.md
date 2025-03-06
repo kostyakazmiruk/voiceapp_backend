@@ -2,6 +2,15 @@ https://www.loom.com/share/d50ab91c030a46729f931c6eb0966276?sid=e4a3cfe5-7f43-4a
 
 FrontEnd https://github.com/kostyakazmiruk/voice_frontend
 
+.env
+DATABASE_HOST=postgres # Name of the service in Docker
+DATABASE_PORT=
+DATABASE_USERNAME=
+DATABASE_PASSWORD=
+DATABASE_DBNAME=
+NODE_ENV=production
+
+SERVICE_PORT=8000
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
