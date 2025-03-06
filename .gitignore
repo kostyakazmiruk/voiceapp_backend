@@ -60,3 +60,5 @@ src/app/homepage/pages/**/*.html
 
 # Upload files shouldnt be in git, it should be in S3
 /uploads/*.webm
+
+.env
