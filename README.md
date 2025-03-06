@@ -1,3 +1,8 @@
+https://www.loom.com/share/d50ab91c030a46729f931c6eb0966276?sid=e4a3cfe5-7f43-4a0d-80ef-4f37cd1fd0ec
+
+FrontEnd https://github.com/kostyakazmiruk/voice_frontend
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
