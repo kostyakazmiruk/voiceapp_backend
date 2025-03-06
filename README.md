@@ -2,7 +2,7 @@ https://www.loom.com/share/d50ab91c030a46729f931c6eb0966276?sid=e4a3cfe5-7f43-4a
 
 FrontEnd https://github.com/kostyakazmiruk/voice_frontend
 
-.env
+.env<br>
 DATABASE_HOST=postgres # Name of the service in Docker<br>
 DATABASE_PORT=<br>
 DATABASE_USERNAME=<br>
