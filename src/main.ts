@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import * as process from 'node:process';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -9,7 +10,8 @@ async function bootstrap() {
     methods: ['GET', 'POST', 'DELETE'],
     credentials: true,
   });
-  await app.listen(8000);
-  console.log('Listening 8000');
+  let port: number = parseInt(process.env.SERVICE_PORT ?? '8000', 10);
+  await app.listen(port);
+  console.log(`Listening ${port}`);
 }
 bootstrap();
